@@ -15,15 +15,40 @@
     <form action="submission.html">
         <p>
             <label for="first">First Name:</label>
-            <input type="text" id="first" name="first" placeholder="FIRST name only please">
+            <input value="Default" type="text" id="first" name="first" placeholder="FIRST name only please">
         </p>
         <p>
             <label for="last">Last Name:</label>
             <input type="text" id="last" name="last" placeholder="LAST name only please">
         </p>
+
         <p>
-            <input type="submit">
+            <label for="area">Tell me a story...</label>
+            <textarea id="area" name="area" rows="10" placeholder="Enter multi line text here"></textarea>"
         </p>
+
+        <p>
+            <label for="check">Did you like this page?</label>
+            <input type="checkbox" id="check" name="check">
+        </p>
+
+        <p>
+            <label for="pass">Please a password:</label>
+            <input type="password" id="pass" name="pass">
+        </p>
+
+        <p>
+            <label for="rate">Rate my web form: <strong>0</strong></label>
+            <input type="radio" id="rate" name="rate" value="0">
+            <input type="radio" id="rate" name="rate" value="1">
+            <input type="radio" id="rate" name="rate" value="2">
+            <input type="radio" id="rate" name="rate" value="3">
+            <input type="radio" id="rate" name="rate" value="4">
+            <input type="radio" id="rate" name="rate" value="5">
+            <label for="rate"><strong>5</strong></label>
+        </p>
+
+        <input type="submit" value="Submit Form Data">
     </form>
 </body>
 
