@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid Layout</title>
+
+
+    <style>
+        header {
+            background-color: blue;
+            height: 50px;
+        }
+
+        aside {
+            background-color: red;
+            flex: 0 1 20%;
+        }
+
+        main {
+            background-color: green;
+            flex: 0 1 80%;
+            
+        }
+
+        #c1 {
+            display: flex;
+            height: 400px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        Header
+    </header>
+    <div id="c1">
+        <aside>
+            Side
+        </aside>
+
+        <main>
+            Main
+        </main>
+    </div>
+
+    <footer>
+        <a href="../9-28/">Back to 9-28</a>
+    </footer>
+</body>
+
+
+</html>
