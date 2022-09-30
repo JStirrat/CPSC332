@@ -16,13 +16,14 @@
         div {}
 
         #fake-button {
+            font-size: x-large;
             /*
                 offset-x - Horizontal pixel offset of shadow
                 offset-y - Vertical pixel offset of shadow
                 blur-radius - Optional shadow blur (default is 0)
                 color - Optional shadow color (default is usually the current CSS color)
             */
-
+            text-shadow: 5px 2px 10px orangered;
             /*
                 inset - Optional value that draws the shadow inside the box (default is outside the box)
                 offset-x - Horizontal pixel offset of shadow
@@ -31,7 +32,7 @@
                 spread-radius - Positive value causes shadow to grow, negative values to shrink (default is 0)
                 color - Optional shadow color (default is usually the current CSS color)
             */
-
+            box-shadow: 5px 2px 5px blue;
             /* border-radius
                 Single value - All four corners are equally rounded
                 Two values - First value is top-left and bottom-right corners, second value is top-right 
@@ -41,7 +42,7 @@
                 Four values - First value is top-left, second is top-right, third is bottom-right, forth 
                     is bottom-left
             */
-
+            border-radius: 50px;
             /* border-image
                 renders an element's border using sections of an image
             */
@@ -49,11 +50,13 @@
             /* linear-gradient 
                 creates a linear gradient that transitions from color1 to color2 when moving from the top
                 edge to the bottom edge.*/
-
+            background: linear-gradient(to bottom, red, yellow);
             /* Animation:
                 needs a name to match with the keyframe rules
                 add additional properties/values to activate
             */
+            animation-name: change-size;
+            animation-duration: 5s;
 
         }
 
@@ -69,7 +72,23 @@
 
         @keyframes changeColors {}
 
-        @keyframes changeSize {}
+        @keyframes changeSize {
+            0%{
+                transform: scale(1);
+            }
+
+            50%{
+                transform: scale(.75);
+            }
+
+            75%{
+                transform: scale(.5);
+            }
+
+            100%{
+                transform: scale(.25);
+            }
+        }
     </style>
 </head>
 
