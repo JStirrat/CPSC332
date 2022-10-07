@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <title>10-7 Participation Index Page</title>
+
+        <script>
+            window.onload = function(){
+                var myInt = '42'; //function level scope
+                let myOtherInt = 9001; //scope of var and let differ, let is block
+                anotherInt = 9000; //global scopeS
+
+                const SOME_VALUE = 3.14159265;
+
+                let myDouble = [5, "hello", true, "world"];
+                let myVar; //undefined
+                let myOtherVar = null;
+
+                //alert("yo");
+                console.log("console message")
+                // let response = prompt("Do you want to play a game?");
+                // alert("you said " + response)
+
+                if (true) {
+                    var y = 0;
+                }
+
+                console.log(y);
+
+                let number = 2;
+                let aString = "2";
+                console.log(number + 2);
+                console.log(number + "2");
+                console.log(number + parseInt(aString));
+
+                if(number === 2){ //checks data type and value
+
+                }
+
+                for (let index = 0; index < 2; index++) {
+                        
+                }
+
+                // do{
+
+                // }while(true);        
+                
+                function printTwoThingsToTheConsole(message, num){
+                    console.log("The message is " + message + " and the number is " + num);
+                    //return 9001;
+                }
+               
+                printTwoThingsToTheConsole("Hello", 7);
+                let result = printTwoThingsToTheConsole(7, "Text"); //dynamically typed
+                console.log(result);
+
+                (function (){
+                    consol.log("Hello Anonymous");
+                })();
+
+                let arrowAdd2 = (x, y, z) => x+2;
+                arrowAdd2(40, 1, 2);
+
+            }
+        </script>
+
+
+
+    </head>
+
+    <body>
+        <h1>More Javascript</h1>
+        <footer>
+            <a href="../../">Back to the index</a>
+        </footer>
+    </body>
+</html>
