@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            window.onload = function(){
+                var myInt = '42'; //function level scope
+                let myOtherInt = 9001; //scope of var and let differ, let is block
+                anotherInt = 9000; //global scopeS
+
+                //error - will stop running at this line
+                //arrowAdd2(40, 1, 2)
+
+                const SOME_VALUE = 3.14159265;
+
+                let myDouble = [5, "hello", true, "world"];
+                let myVar; //undefined
+                let myOtherVar = null;
+
+                //alert("yo");
+                console.log("console message")
+                // let response = prompt("Do you want to play a game?");
+                // alert("you said " + response)
+
+                if (true) {
+                    var y = 0;
+                }
+
+                console.log(y);
+
+                let number = 2;
+                let aString = "2";
+                console.log(number + 2);
+                console.log(number + "2");
+                console.log(number + parseInt(aString));
+
+                if(number === 2){ //checks data type and value
+
+                }
+
+                for (let index = 0; index < 2; index++) {
+                        
+                }
+
+                // do{
+
+                // }while(true);        
+                
+                //hoisted - can be used anywhere inside this function
+                function printTwoThingsToTheConsole(message, num){
+                    console.log("message is " + message + " and num is " + num);
+                    //return 9001;
+                }
+               
+                printTwoThingsToTheConsole("Hello", 7);
+                let result = printTwoThingsToTheConsole(7, "Text"); //dynamically typed
+                console.log(result);
+
+                //not hoisted
+                (function (){
+                    console.log("Hello Anonymous");
+                })();
+
+
+
+                try {
+                    arrowAdd2(40, 1, 2);
+                } catch (error) {
+                    console.log(error)
+                }
+                finally{}
+
+
+                let arrowAdd2 = (x, y, z) => x + 2;
+
+                var myArray = [1, 2, 3, 4];
+
+                for (let i = 0; i < myArray.length; i++) {
+                    console.log(myArray[i]);
+                }
+
+                for (const val of myArray) {
+                    console.log(val);
+                }
+
+                myArray.forEach(function(item, i){
+                    console.log(item + " " + i)
+                });
+
+                var myObject = {
+                    name: "defaultName",
+                    number: 42,
+                    array: [1, 2, 3, 4, 5, 6],
+
+                    //object methods
+                    echo: function(value){
+                        console.log(value)
+                    } ,
+
+                    get numberPlusOne (){
+                        return this.number + 1;
+                    },
+
+                    set numberPlusAnother (num){
+                        //TODO fix this
+                    },
+                };
+                myObject.name =  "Bob Smith";
+                console.log(myObject.name);
+                myObject.echo("Hello world");
+
+                console.log(myObject.numberPlusOne);
+                console.log(myObject.numberPlusAnother = 9000);
+                console.log(myObject.number);
+
+                let dateTimeNow = new Date();
+                console.log(dateTimeNow);
+
+            }
+
+
+            var currentDate = {
+                dateTime: null,
+            }
+
+            document.getElementById("update-date").addEventListener("click", pizzaTime);
+
+            function pizzaTime(){
+                console.log("Is it pizza time?")
+            };
+
+        </script>
+    </head>
+    <body>
+        <h1>Even More Javascript</h1>
+
+        <div>
+            <p>
+                <span id="date-text">Click the button</span>
+            </p>
+            <p>
+                <button id="update-date">Click to see current date time!</button>
+            </p>
+        </div>
+
+        <footer>
+            <a href="../../">Back to the index</a>
+        </footer>
+    </body>
+</html>
