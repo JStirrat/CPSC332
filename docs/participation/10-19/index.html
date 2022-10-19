@@ -112,7 +112,7 @@
                 var xVal = event.pageX - canvas.offsetLeft,
                     yVal = event.pageY - canvas.offsetTop;
 
-                if (yVal > boxYStartCoord &&
+                if (yVal > boxYStartCoord && //are coordinates in box range?
                     xVal > boxXStartCoord &&
                     yVal < (boxYStartCoord + boxYEndCoord) &&
                     xVal < (boxXStartCoord + boxXEndCoord)) {
