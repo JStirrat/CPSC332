@@ -35,23 +35,76 @@
             color: black;
             background-color: lightgreen;
         }
+
+        .saved {
+            border: yellow;
+            color: yellow;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        span {
+            color: red;
+        }
     </style>
     <script>
-        let q1Widget = document.getElementById("q1");
-        let q2Widget = document.getElementById("q2");
-        let q3Widget = document.getElementById("q3");
+        window.addEventListener("DOMContentLoaded", domLoaded);
 
-        document.getElementById("q1-btn").addEventListener("click", function () {
-            sessionStorage.setItem("name", q1Widget.value);
-        });
+        function domLoaded() {
+            let q1Widget = document.getElementById("q1");
+            let q2Widget = document.getElementById("q2");
+            let q3Widget = document.getElementById("q3");
 
-        document.getElementById("q2-btn").addEventListener("click", function () {
-            sessionStorage.setItem("color", q2Widget.value);
-        });
+            document.getElementById("q1-btn").addEventListener("click", () => {
+                if (q1Widget.value != "") {
+                    sessionStorage.setItem("name", q1Widget.value);
+                    q1Widget.classList.add("saved")
+                }
+                else {
+                    document.getElementById("e1").classList.remove("hide");
+                }
+            });
 
-        document.getElementById("q3-btn").addEventListener("click", function () {
-            sessionStorage.setItem("movie", q3Widget.value);
-        });
+            q1Widget.addEventListener("focus", () => {
+                document.getElementById("e1").classList.add("hide");
+            })
+
+            document.getElementById("q2-btn").addEventListener("click", () => {
+                if (q2Widget.value != "") {
+                    sessionStorage.setItem("color", q2Widget.value);
+                    q2Widget.classList.add("saved")
+                }
+                else {
+                    document.getElementById("e2").classList.remove("hide");
+                }
+            });
+
+            q2Widget.addEventListener("focus", () => {
+                document.getElementById("e2").classList.add("hide");
+            })
+
+            document.getElementById("q3-btn").addEventListener("click", () => {
+                if (q3Widget.value != "") {
+                    sessionStorage.setItem("movie", q3Widget.value);
+                    q3Widget.classList.add("saved")
+                }
+                else {
+                    document.getElementById("e3").classList.remove("hide");
+                }
+            });
+
+            q3Widget.addEventListener("focus", () => {
+                document.getElementById("e3").classList.add("hide");
+            })
+
+            document.getElementById("saveBtn").addEventListener("click", function () {
+                if(!sessionStorage.getItem("name") || !sessionStorage.getItem("color") || !sessionStorage.getItem("movie")){
+                    event.preventDefault()
+                }
+            });
+        }
     </script>
 </head>
 
@@ -62,20 +115,23 @@
             <div>
                 <label for="q1">Name: </label>
                 <input id="q1" name="q1" type="box">
-                <button id="q1-btn">Save</button>
+                <button type="button" id="q1-btn">Save</button>
+                <span id="e1" class="hide">Error: empty field</span>
             </div>
             <div>
                 <label for="q2">Favorite Color: </label>
                 <input id="q2" name="q2" type="box">
-                <button id="q2-btn">Save</button>
+                <button type="button" id="q2-btn">Save</button>
+                <span id="e2" class="hide">Error: empty field</span>
             </div>
             <div>
                 <label for="q3">Favorite Movie: </label>
                 <input id="q3" name="q3" type="box">
-                <button id="q3-btn">Save</button>
+                <button type="button" id="q3-btn">Save</button>
+                <span id="e3" class="hide">Error: empty field</span>
             </div>
             <div>
-                <input type="submit" value="Submit Response">
+                <input id="saveBtn" type="submit" value="Submit Response">
             </div>
         </form>
     </fieldset>

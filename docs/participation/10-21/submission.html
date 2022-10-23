@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submission</title>
 </head>
+<script>
+    window.addEventListener("DOMContentLoaded", domLoaded);
+
+    function domLoaded() {
+        document.getElementById("a1").innerText = sessionStorage.getItem("name")
+        document.getElementById("a2").innerText = sessionStorage.getItem("color")
+        document.getElementById("a3").innerText = sessionStorage.getItem("movie")
+    }
+
+</script>
+<style>
+    th, td{
+        border: 2px solid black;
+    }
+</style>
+
 <body>
     <table>
-        
+        <thead>
+            <tr>
+                <th>Name:</th>
+                <th>Favorite Color:</th>
+                <th>Favorite Movie:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="a1"></td>
+                <td id="a2"></td>
+                <td id="a3"></td>
+            </tr>
+        </tbody>
     </table>
     <footer>
         <a href="../../">Back to the index</a>
     </footer>
 </body>
+
 </html>
